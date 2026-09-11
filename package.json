@@ -5,7 +5,10 @@
   "description": "Eszter meg engage tag?",
   "type": "module",
   "scripts": {
-    "build": "node scripts/generate-manifest.mjs",
-    "dev": "node scripts/generate-manifest.mjs && npx --yes serve public"
+    "build": "node scripts/build-images.mjs",
+    "dev": "node scripts/build-images.mjs && npx --yes serve public"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.4"
   }
 }

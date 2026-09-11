@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "node scripts/generate-manifest.mjs",
+  "buildCommand": "node scripts/build-images.mjs",
   "outputDirectory": "public",
   "cleanUrls": true,
   "headers": [

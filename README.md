@@ -8,20 +8,43 @@ Egy egyoldalas statikus weboldal, Vercelre készítve.
 
 ## Képek hozzáadása
 
-Dobj be bármennyi képet a `public/assets/` mappába (`.jpg`, `.jpeg`, `.png`,
-`.webp`, `.avif`, `.gif`, `.svg`). A build lépés automatikusan legenerálja a
-`public/assets/manifest.json` fájlt, így nem kell kódot módosítani.
+Dobj be bármennyi képet az `images/` mappába (`.jpg`, `.png`, `.webp`,
+`.heic`, `.tif`). Ezek az eredeti, nagy felbontású fájlok — a böngészőbe
+soha nem ezek kerülnek.
 
-A repóban jelenleg 4 `placeholder-*.svg` gradiens van — ezeket bátran töröld,
-amikor beteszed az igazi képeket.
+A build ([scripts/build-images.mjs](scripts/build-images.mjs)) minden képből
+legenerál egy méretsorozatot (640 / 960 / 1280 / 1600 / 1920 / 2560 px széles
+WebP + JPEG) a `public/assets/` mappába, és mellé egy `manifest.json`-t.
+A `public/assets/` mappa nincs verziókezelve, mert generált tartalom.
+
+## Melyik méret melyik eszközre?
+
+A [public/script.js](public/script.js) betöltéskor kiszámolja, milyen széles
+képre van valójában szükség (`background-size: cover` mellett egy magas
+telefonképernyő a kép szélességének nagy részét levágja), és a legkisebb
+elég nagy méretet töltí le:
+
+| Eszköz | Letöltött méret |
+| --- | --- |
+| iPhone 15 (portré) | 1280 px, ~240 KB |
+| iPhone 15 (fekvő) | 960 px, ~140 KB |
+| Laptop 1440x900 | 1600 px, ~380 KB |
+| MacBook / iPad (retina) | 2560 px, ~860 KB |
+
+Az eredeti fájlok ~5 MB-osak, szóval ez telefonon kb. 20x kevesebb adat.
+
+Telefonon 1x képpont-sűrűséggel számolunk, nagyobb kijelzőn max. 2x-szel —
+egy sötét fátyol alatti háttérképnek nincs szüksége retina élességre. Ha a
+böngésző adattakarékos módot vagy lassú (2G/3G) kapcsolatot jelez, mindig
+1x-et kap.
 
 ## Helyi futtatás
 
 ```bash
-npm run dev      # legenerálja a manifestet és elindít egy statikus szervert
+npm run dev      # legenerálja a képvariánsokat és elindít egy statikus szervert
 ```
 
-Vagy csak a manifest:
+Vagy csak a képek legenerálása:
 
 ```bash
 npm run build

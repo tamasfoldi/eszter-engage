@@ -46,19 +46,24 @@ body.sad .backdrop {
     radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.62) 100%);
 }
 
+/* Pinned to the viewport and centred on both axes, so the answer sits in
+   the middle whatever the screen shape or mobile browser chrome does. */
 .stage {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
   padding: 24px;
 }
 
 .answer {
   margin: 0;
-  font-size: clamp(5rem, 34vw, 26rem);
-  line-height: 0.9;
+  /* Starting point only: script.js measures the rendered glyphs and sets
+     an exact px size, because emoji advance widths are unguessable. */
+  font-size: clamp(2rem, min(14vw, 45vh), 18rem);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
   font-weight: 900;
   letter-spacing: 0.02em;
   text-transform: uppercase;
