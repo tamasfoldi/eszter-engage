@@ -1,4 +1,4 @@
-/* Eszter még engage tag? */
+/* Engage tag-e még Eszter? */
 
 // IGEN through the end of 2026-09-21 (Budapest time), NEM afterwards.
 // Written as an absolute instant so the answer does not depend on the

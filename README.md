@@ -1,4 +1,4 @@
-# Eszter még engage tag?
+# Engage tag-e még Eszter?
 
 Egy egyoldalas statikus weboldal, Vercelre készítve.
 
@@ -24,11 +24,11 @@ képre van valójában szükség (`background-size: cover` mellett egy magas
 telefonképernyő a kép szélességének nagy részét levágja), és a legkisebb
 elég nagy méretet töltí le:
 
-| Eszköz | Letöltött méret |
-| --- | --- |
-| iPhone 15 (portré) | 1280 px, ~240 KB |
-| iPhone 15 (fekvő) | 960 px, ~140 KB |
-| Laptop 1440x900 | 1600 px, ~380 KB |
+| Eszköz                  | Letöltött méret  |
+| ----------------------- | ---------------- |
+| iPhone 15 (portré)      | 1280 px, ~240 KB |
+| iPhone 15 (fekvő)       | 960 px, ~140 KB  |
+| Laptop 1440x900         | 1600 px, ~380 KB |
 | MacBook / iPad (retina) | 2560 px, ~860 KB |
 
 Az eredeti fájlok ~5 MB-osak, szóval ez telefonon kb. 20x kevesebb adat.
