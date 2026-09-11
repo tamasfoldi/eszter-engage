@@ -1,4 +1,4 @@
-# Engage tag-e még Eszter?
+# Tagja-e még Eszter az Engage-nek?
 
 Egy egyoldalas statikus weboldal, Vercelre készítve.
 
