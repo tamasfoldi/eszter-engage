@@ -1,0 +1,11 @@
+{
+  "name": "eszter-engage",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Eszter meg engage tag?",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/generate-manifest.mjs",
+    "dev": "node scripts/generate-manifest.mjs && npx --yes serve public"
+  }
+}
