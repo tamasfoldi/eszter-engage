@@ -46,7 +46,7 @@ function render() {
   var answer = document.getElementById("answer");
 
   document.body.classList.toggle("sad", !engaged);
-  answer.textContent = engaged ? "IGEN" : "NEM";
+  answer.textContent = engaged ? "💄✨🔥IGEN💅💖💇‍♀️" : "🫨☠️🖤NEM💀🪦😵";
   answer.setAttribute("lang", "hu");
 
   // Let the browser paint once before animating in.
